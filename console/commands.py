@@ -22,3 +22,10 @@ def dir():
 def cls():
     os.system("cls")
 clear = cls
+def execute(*command):
+    cmd = str()
+    for i in command:
+        cmd+=f" {i}"
+    os.system(cmd)
+def exit():
+    raise SystemExit
