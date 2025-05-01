@@ -16,7 +16,11 @@ print(color.Fore.MAGENTA+r"""
 print(color.Fore.MAGENTA+f"Hello, {console.user()}")
 console.checkisexit()
 while 1:
-    inp = input(f"{color.Fore.GREEN}{console.computer()}_{console.user()}{color.Style.RESET_ALL}-$ ")
+    try:
+        inp = input(f"{color.Fore.GREEN}{console.computer()}_{console.user()}{color.Style.RESET_ALL}-$ ")
+    except:
+        console.checkisexit()
+        continue
     try:
         console.execute(inp)    
     except:
