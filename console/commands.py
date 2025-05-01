@@ -10,8 +10,16 @@ def sum(a, b):
 def ip():
     print("Node:", socket.gethostname())
     print("IP:  ", socket.gethostbyname(socket.getfqdn()))
-def echo(msg):
-    print(msg)
+def echo(*msg):
+    out = str()
+    first = True
+    for i in msg:
+        if first:
+            out+=f"{i}"
+            first = False
+        else:
+            out+=f" {i}"
+    print(out)
 def cd(dir):
     try:
         os.chdir(dir)
