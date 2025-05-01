@@ -11,11 +11,14 @@ def user():
 def computer():
     return socket.gethostname()
 
-def checkisexit():
+def checkisexit(showkey=True):
     try:
-        getpass.getpass("Enter to continue, Ctrl+C to exit\n")
+        if showkey:
+            getpass.getpass(console.color.Fore.RED+"^C"+console.color.Style.RESET_ALL+"\nEnter to continue, Ctrl+C to exit")
+        else:
+            getpass.getpass("\nEnter to continue, Ctrl+C to exit")
     except:
-        print("Exiting...")
+        print("\nExiting...")
         raise SystemExit
     
 def execute(command: str):

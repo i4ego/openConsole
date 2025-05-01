@@ -14,7 +14,8 @@ print(color.Fore.MAGENTA+r"""
       | |                                                    
       |_|                                                    """)
 print(color.Fore.MAGENTA+f"Hello, {console.user()}")
-console.checkisexit()
+console.checkisexit(False)
+console.clear()
 while 1:
     try:
         inp = input(f"{color.Fore.GREEN}{console.computer()}_{console.user()}{color.Style.RESET_ALL}-$ ")
