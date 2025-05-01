@@ -23,5 +23,7 @@ while 1:
         continue
     try:
         console.execute(inp)    
+    except SystemExit:
+        raise SystemExit
     except:
         print("Command not found or missing argument")
