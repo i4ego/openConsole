@@ -1,4 +1,4 @@
-import socket
+import socket, os
 def hello():
     print("Hello, OpenConsole Users!")
 def sum(a, b):
@@ -10,3 +10,15 @@ def sum(a, b):
 def ip():
     print("Node:", socket.gethostname())
     print("IP:  ", socket.gethostbyname(socket.getfqdn()))
+def echo(msg):
+    print(msg)
+def cd(dir):
+    try:
+        os.chdir(dir)
+    except:
+        print("Invalid directory")
+def dir():
+    print(os.getcwd())
+def cls():
+    os.system("cls")
+clear = cls
