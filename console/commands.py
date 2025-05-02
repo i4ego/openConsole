@@ -45,6 +45,13 @@ def ls(showhidden=False):
             continue
         if i[0] != ".":
             print(i)
+def read(file):
+    content = str()
+    try:
+        with open(file, "r") as file:
+            print(file.read())
+    except:
+        print("Invalid file!")
 def help(*anyargs):
     print("""\
 All commands:
@@ -56,6 +63,7 @@ cls/clear \t[no args]
 dir \t\t[no args]
 ls \t\t[showhidden (True/False)]
 cd \t\t[directory (String)]
+read \t\t[filename (String)]
 execute \t[command (String)]
 help \t\t[no args]
 exit \t\t[no args]
