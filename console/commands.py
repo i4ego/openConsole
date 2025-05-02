@@ -37,3 +37,29 @@ def execute(*command):
     os.system(cmd)
 def exit():
     raise SystemExit
+def ls(showhidden=False):
+    listdir = os.listdir(os.getcwd())
+    for i in listdir:
+        if i[0] == "." and showhidden=="True":
+            print(i)
+            continue
+        if i[0] != ".":
+            print(i)
+def help(*anyargs):
+    print("""\
+All commands:
+hello \t\t[no args]
+echo \t\t[*message (Any)]
+sum \t\t[a, b (Integer)]
+ip \t\t[no args]
+cls/clear \t[no args]
+dir \t\t[no args]
+ls \t\t[showhidden (True/False)]
+cd \t\t[directory (String)]
+execute \t[command (String)]
+help \t\t[no args]
+exit \t\t[no args]
+""")
+
+if __name__ == "__main__":
+    help()
