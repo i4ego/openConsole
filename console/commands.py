@@ -52,6 +52,14 @@ def read(file):
             print(file.read())
     except:
         print("Invalid file!")
+def write(file, content):
+    try:
+        if file not in os.listdir(os.getcwd()):
+            raise OSError
+        with open(file, "a+") as file:
+            file.write("\n"+content)
+    except:
+        print("Invalid file!")
 def help(*anyargs):
     print("""\
 All commands:
@@ -64,6 +72,7 @@ dir \t\t[no args]
 ls \t\t[showhidden (True/False)]
 cd \t\t[directory (String)]
 read \t\t[filename (String)]
+write \t\t[filename, content (String)]
 execute \t[command (String)]
 help \t\t[no args]
 exit \t\t[no args]
